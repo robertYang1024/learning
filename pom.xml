@@ -5,7 +5,8 @@
 	<packaging>pom</packaging>
 	<modules>
 		<module>java8learnling</module>
-	</modules>
+        <module>kafkaLearning</module>
+    </modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
