@@ -6,6 +6,8 @@
 	<modules>
 		<module>java8learnling</module>
         <module>kafkaLearning</module>
+		<module>designPattern</module>
+        <module>socket</module>
     </modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
