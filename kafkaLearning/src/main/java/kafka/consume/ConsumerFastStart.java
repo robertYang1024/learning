@@ -21,10 +21,11 @@ public class ConsumerFastStart {
      */
 
     public static final String brokerList = "10.118.80.53:9092";
-    public static final String topic = "topic-demo";
-    public static final String groupId = "group-demo2";
+    public static final String topic = "register";
+//    public static final String groupId = "group-demo2";
+    public static final String groupId = "allgroup";
 
-    public static void main(String[] args){
+    public static void main(String[] args) throws InterruptedException {
         Properties properties = new Properties();
         properties.put("key.deserializer", StringDeserializer.class.getName());
         properties.put("value.deserializer", StringDeserializer.class.getName());
@@ -44,6 +45,7 @@ public class ConsumerFastStart {
             for (ConsumerRecord<String, String> record : records) {
                 System.out.println(record.value());
             }
+            Thread.sleep(2000);
         }
     }
 

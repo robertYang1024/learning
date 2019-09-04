@@ -1,0 +1,3 @@
+server:
+  name: socket-server
+  port: 12312
