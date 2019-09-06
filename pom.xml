@@ -9,6 +9,7 @@
 		<module>designPattern</module>
         <module>socket</module>
         <module>dddDemo</module>
+        <module>redisDemo</module>
     </modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
