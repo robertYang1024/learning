@@ -25,7 +25,7 @@ public class JedisPoolDemo {
     /**
      *  password
       */
-    private static String password = "" ;
+//    private static String password = "" ;
 
     private static JedisPool jedisPool =  null;
 
@@ -53,7 +53,7 @@ public class JedisPoolDemo {
             poolConfig.setMaxIdle(maxIdle);
             poolConfig.setTestOnBorrow(testOnBorrow);
             poolConfig.setMaxWaitMillis(maxWait);
-            JedisPool jedisPool = new JedisPool(poolConfig, host, port, timeout, password);
+             jedisPool = new JedisPool(poolConfig, host, port, timeout);
         } catch (Exception e) {
             logger.error("初始化失败", e);
         }
