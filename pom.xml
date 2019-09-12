@@ -10,6 +10,7 @@
         <module>socket</module>
         <module>dddDemo</module>
         <module>redisDemo</module>
+        <module>threadDemo</module>
     </modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
