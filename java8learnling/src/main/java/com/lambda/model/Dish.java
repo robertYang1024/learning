@@ -1,8 +1,10 @@
 package com.lambda.model;
 
 import lombok.Data;
+import lombok.ToString;
 
 @Data
+@ToString
 public class Dish {
 
     private String name ;

@@ -11,14 +11,13 @@ import org.apache.kafka.clients.producer.ProducerRecord;
 import org.apache.kafka.common.serialization.StringSerializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import sun.rmi.runtime.Log;
 
 /**
  * @author bo.yang
  */
 public class ProducerFastStart {
     private static Logger logger = LoggerFactory.getLogger(ProducerFastStart.class);
-    public static final String brokerList = "10.118.80.53:9092";
+    public static final String brokerList = "10.118.80.54:9092";
 //    public static final String topic = "topic-demo";
     public static final String topic = "test-topic";
 
@@ -33,15 +32,14 @@ public class ProducerFastStart {
 
         // 构建所需要发送的消息
         SendMessage sendMessage = new SendMessage()
-                .setMessageId(UUID.randomUUID().toString())
-                .setTopic("test-topic")
+                .setId(UUID.randomUUID().toString())
                 .setService("user-ervice")
                 .setContent("test")
-                .setType("com.icec.test.UserEvent.class")
-//                .setSequenceKey("123456")
+                .setJsonMessageType("com.icec.test.UserEvent.class")
+                .setPrimaryKey("123456")
                 .setCreatedAt(new Date());
         String json = JSON.toJSONString(sendMessage);
-        String json2 = JSON.toJSONString(sendMessage.setMessageId(UUID.randomUUID().toString()));
+        String json2 = JSON.toJSONString(sendMessage.setId(UUID.randomUUID().toString()));
         System.out.println("send:"+json);
         System.out.println("send2:"+json2);
 

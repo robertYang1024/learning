@@ -9,11 +9,14 @@ import java.util.Date;
 @Accessors(chain = true)
 public class SendMessage {
 
-    private String messageId;
+    private String id;
+    private String jsonMessageType;
 
-    private String topic;
-
-    private String type;
+    private String primaryKey;
+    /**
+     * 广播 等扩展种类
+     */
+    private String messageType;
 
     private String service;
 
@@ -21,15 +24,10 @@ public class SendMessage {
 
     private Date createdAt;
 
-    private String sequenceKey;
     /**
      * 消息的重试发送次数
      * 用于记录监控
      */
     private Integer retries;
 
-    /**
-     * 广播 等扩展种类
-     */
-    private String msgType;
 }
