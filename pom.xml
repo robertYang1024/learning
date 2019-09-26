@@ -12,6 +12,7 @@
         <module>redisDemo</module>
         <module>threadDemo</module>
         <module>justTest</module>
+        <module>guavaDemo</module>
     </modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
