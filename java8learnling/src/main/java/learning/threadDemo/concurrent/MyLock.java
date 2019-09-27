@@ -1,4 +1,4 @@
-package concurrent;
+package learning.threadDemo.concurrent;
 
 import java.util.ArrayList;
 import java.util.List;

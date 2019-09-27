@@ -16,17 +16,18 @@ public class GuavaretryTest {
 
     static int num = 0;
     public static void main(String[] args) throws ExecutionException, RetryException {
-         Retryer<Boolean> retryer = RetryerBuilder.<Boolean>newBuilder()
+         Retryer<Object> retryer = RetryerBuilder.<Object>newBuilder()
                 // retryIf 重试条件
-                .retryIfException()
-                .retryIfRuntimeException()
-                .retryIfExceptionOfType(Exception.class)
-                .retryIfException(Predicates.equalTo(new Exception()))
+//                .retryIfException()
+//                .retryIfRuntimeException()
+//                .retryIfExceptionOfType(Exception.class)
+//                .retryIfException(Predicates.equalTo(new Exception()))
+                .retryIfResult(Predicates.equalTo(null))
                 .retryIfResult(Predicates.equalTo(false))
 
                 // 等待策略：每次请求间隔1s
-//                .withWaitStrategy(WaitStrategies.fixedWait(1, TimeUnit.SECONDS))
-                .withWaitStrategy(WaitStrategies.incrementingWait(0, TimeUnit.SECONDS, 1, TimeUnit.SECONDS))
+                .withWaitStrategy(WaitStrategies.fixedWait(1, TimeUnit.SECONDS))
+//                .withWaitStrategy(WaitStrategies.incrementingWait(0, TimeUnit.SECONDS, 1, TimeUnit.SECONDS))
                 // 停止策略 : 尝试请求6次
                 .withStopStrategy(StopStrategies.stopAfterAttempt(6))
 
@@ -47,10 +48,20 @@ public class GuavaretryTest {
              }
          };
 
-         Callable callable1 = () -> {
-             System.out.println("callble " + num++);
-//             throw  new Exception("test");
-             return null;
+         Callable<Object> callable1 = () -> {
+             Object o = null;
+             try {
+                System.out.println("callble " + num++);
+                 throw  new RuntimeException("test");
+             } catch (Exception e) {
+                int t =  1/0;
+                 return o;
+             } finally {
+                 return o;
+             }
+
+//             o = new Object();
+//             return o;
          };
 
 //         retryer.
@@ -63,7 +74,7 @@ public class GuavaretryTest {
 
          @Override
          public <V> void onRetry(Attempt<V> attempt) {
-             log.info("retry " + num + "................");
+             log.info("retry " + (num-1) + "................");
          }
      }
 //    public static Integer get() {

@@ -1,4 +1,4 @@
-package jackson.model;
+package learning.jackson.model;
 
 import lombok.Data;
 import lombok.experimental.Accessors;

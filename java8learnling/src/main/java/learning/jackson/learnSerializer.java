@@ -1,4 +1,4 @@
-package jackson;
+package learning.jackson;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
@@ -6,8 +6,8 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import jackson.model.Company;
-import jackson.model.User;
+import learning.jackson.model.Company;
+import learning.jackson.model.User;
 
 import java.util.ArrayList;
 
@@ -25,7 +25,7 @@ public class learnSerializer {
         mapper2.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES,false);
         mapper2.configure(DeserializationFeature.ACCEPT_EMPTY_STRING_AS_NULL_OBJECT,true);
         /**
-         * jackson 序列化
+         * learning.jackson 序列化
          */
         String userString = mapper.writeValueAsString(user);
         System.out.println(userString);
@@ -33,10 +33,10 @@ public class learnSerializer {
         System.out.println(mapper2.writeValueAsString(user));
 
         /**
-         * jackson 反序列
+         * learning.jackson 反序列
          */
         String json = "{\"id\":\"123\",\"name\":\"张三\",\"age\":100,\"company\":{\"id\":\"8888\",\"name\":\"King\"}}";
-        String json2 = "[\"jackson.model.User\",{\"id\":\"123\",\"name\":\"张三\",\"age\":100,\"company\":[\"jackson.model.Company\",{\"id\":\"8888\",\"name\":\"King\"}]}]";
+        String json2 = "[\"learning.jackson.model.User\",{\"id\":\"123\",\"name\":\"张三\",\"age\":100,\"company\":[\"learning.jackson.model.Company\",{\"id\":\"8888\",\"name\":\"King\"}]}]";
 
         User user2 = mapper.readValue(json,User.class);
 //            User user2 = mapper2.readValue(json,User.class);  //会报错

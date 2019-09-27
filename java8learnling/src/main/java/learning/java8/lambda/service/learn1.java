@@ -1,6 +1,6 @@
-package com.lambda.service;
+package learning.java8.lambda.service;
 
-import com.lambda.model.Dish;
+import learning.java8.lambda.model.Dish;
 
 import java.util.*;
 import java.util.function.Function;

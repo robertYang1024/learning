@@ -1,4 +1,4 @@
-package just.test;
+package learning.test.just.test;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;

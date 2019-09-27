@@ -1,4 +1,4 @@
-package com.lambda.service;
+package learning.java8.lambda.service;
 
 import java.util.ArrayList;
 import java.util.List;

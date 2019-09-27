@@ -1,4 +1,4 @@
-package just.test;
+package learning.test.just.test;
 
 /**
  * @author bo.yang

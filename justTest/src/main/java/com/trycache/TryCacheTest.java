@@ -18,6 +18,12 @@ public class TryCacheTest {
      */
 
     public static void main(String[] args){
+        catchTest();
+//        catchFinallyTest1();
+//        catchFinallyTest2();
+//        finallyExitTest();
+//        finallyTest1();
+//        finallyTest2();
 
     }
 

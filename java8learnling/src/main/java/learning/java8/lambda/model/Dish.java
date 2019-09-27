@@ -1,4 +1,4 @@
-package com.lambda.model;
+package learning.java8.lambda.model;
 
 import lombok.Data;
 import lombok.ToString;
