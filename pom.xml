@@ -5,14 +5,6 @@
 	<packaging>pom</packaging>
 	<modules>
 		<module>learnlingDemo</module>
-        <module>kafkaLearning</module>
-		<module>designPattern</module>
-        <module>socket</module>
-        <module>dddDemo</module>
-        <module>redisDemo</module>
-        <module>threadDemo</module>
-        <module>justTest</module>
-        <module>guavaDemo</module>
     </modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
