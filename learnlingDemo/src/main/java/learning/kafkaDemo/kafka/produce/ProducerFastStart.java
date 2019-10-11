@@ -1,7 +1,7 @@
 package learning.kafkaDemo.kafka.produce;
 
 import com.alibaba.fastjson.JSON;
-import kafka.SendMessage;
+import learning.kafkaDemo.kafka.SendMessage;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerRecord;
 import org.apache.kafka.common.serialization.StringSerializer;
